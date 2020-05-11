@@ -1,10 +1,46 @@
 <div class="card-header">Registered People</div>
 <div class="card-body">
-    <?php
-    foreach ($this->view->data as $key => $value)
-        echo "Name: " . $value['name'] . "<br/>";
-    ?>
+    <table class="table" id="table">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        foreach ($this->view->data as $key => $value) {
+            ?>
+            <tr id="client<?= $value['id'] ?>">
+                <th scope="col"><?= $value['name'] ?></th>
+                <td><?= $value['email'] ?></td>
+                <td>
+<!--                    <button type="submit" id="--><?//= $value['id'] ?><!--" name="delete" class="btn btn-danger">Delete</button>-->
+                    <a href="#" class="btn btn-danger delete" id="<?= $value['id'] ?>">Delete</a>
+                </td>
+            </tr>
+            <?php
+        }
+        ?>
+        </tbody>
+    </table>
+    <form id="delete"></form>
+
 </div>
-<div class="card-footer">
-    <h5><?= "CRUDController@index" ?></h5>
-</div>
+<script>
+    $(document).on('click', '.delete', function () {
+        var id = $(this).attr('id');
+        if (confirm("Are you sure you want to Delete this data?")) {
+            $.ajax({
+                url: "/delete",
+                method: "POST",
+                data: {id: id},
+                success: $('#client' + id).remove()
+            })
+        } else {
+            return false;
+        }
+    });
+
+</script>
