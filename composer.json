@@ -9,5 +9,13 @@
             "email": "rafael_breno@outlook.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": "7.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/",
+            "SW\\": "vendor/SW/"
+        }
+    }
 }
