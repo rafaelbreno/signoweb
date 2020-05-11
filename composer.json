@@ -1,0 +1,13 @@
+{
+    "name": "root/01_signoweb",
+    "description": "Signoweb Challenge Project",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "rafaelbreno",
+            "email": "rafael_breno@outlook.com"
+        }
+    ],
+    "require": {}
+}
