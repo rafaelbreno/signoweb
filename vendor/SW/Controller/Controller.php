@@ -13,12 +13,17 @@ abstract class Controller
         $this->view = new \stdClass();
     }
 
-    protected function render($view)
-    {
+    protected function content() {
         $dir = get_class($this);
         $dir = str_replace('App\\Controllers\\', '', $dir);
         $dir = str_replace('Controller', '', $dir);
         $dir = strtolower($dir);
-        require_once __DIR__ . "/../../../App/Views/" . $dir . "/" . $view . ".phtml";
+        require_once "../App/Views/" . $dir . "/" . $this->view->module . ".phtml";
+    }
+
+    protected function render($view)
+    {
+        $this->view->module = $view;
+        require_once "../App/Views/layout.phtml";
     }
 }

@@ -1,5 +1,10 @@
-<h5><?= "CRUDController@create" ?></h5>
-<?php
-foreach ($this->view->data as $key => $value)
-    echo "Name: " . $value['name'] . "<br/>";
-?>
+<div class="card-header">Register Person</div>
+<div class="card-body">
+    <?php
+    foreach ($this->view->data as $key => $value)
+        echo "Name: " . $value['name'] . "<br/>";
+    ?>
+</div>
+<div class="card-footer">
+    <h5><?= "CRUDController@create" ?></h5>
+</div>

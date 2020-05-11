@@ -1,5 +1,10 @@
-<h5><?= "CRUDController@index" ?></h5>
-<?php
+<div class="card-header">Registered People</div>
+<div class="card-body">
+    <?php
     foreach ($this->view->data as $key => $value)
         echo "Name: " . $value['name'] . "<br/>";
-?>
+    ?>
+</div>
+<div class="card-footer">
+    <h5><?= "CRUDController@index" ?></h5>
+</div>
