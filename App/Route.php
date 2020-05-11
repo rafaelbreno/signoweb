@@ -26,17 +26,17 @@ class Route extends Bootstrap
                 'action' => 'create',
                 'method' => 'GET'
             ),
-            'update' => array(
-                'route' => '/create',
+            'store' => array(
+                'route' => '/store',
                 'controller' => 'CRUDController',
-                'action' => 'update',
-                'method' => 'PUT'
+                'action' => 'store',
+                'method' => 'POST'
             ),
             'delete' => array(
-                'route' => '/create',
+                'route' => '/delete',
                 'controller' => 'CRUDController',
                 'action' => 'delete',
-                'method' => 'DELETE'
+                'method' => 'POST'
             )
         ];
         $this->setRoutes($routes);
